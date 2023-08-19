@@ -1,0 +1,135 @@
+@import '../abstracts/utilities';
+
+.h-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+    z-index: 999;
+
+    &__links {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+
+        & h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-right: 5rem;
+        }
+
+        & > ul {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+
+            & > li {
+                position: relative;
+                
+                & > a {
+                    font-size: 1.7rem;
+                    font-weight: 500;
+                    display: flex;
+                    align-items: center;
+
+                    &:hover {
+                        opacity: .7;
+                    }
+
+                    & svg {
+                        display: none;
+                        transform: rotate(180deg);
+                        transition: .5s all;
+
+                        &[icon] {
+                            display: block;
+                        }
+
+                        &[animate] {
+                            transform: rotate(0);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        gap: 2rem;
+        margin-left: 5rem;
+
+        & > a {
+            font-size: 1.7rem;
+            font-weight: 500;
+
+            &:hover {
+                color: #616161;
+            }
+
+            &:first-of-type {
+                @include magic-border(2px, #3d3b3b, 0.2s, 1);
+                padding: .4rem .6rem;
+            }
+
+            &:last-of-type {
+                @include magic-border(2px, #3d3b3b, 0.2s, 0);
+                padding: .4rem;
+            }
+        }
+    }
+
+    &__dropdown {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-1.8rem);
+        transition: .7s all;
+        padding: 2rem;
+        background-color: #fff;
+        -webkit-box-shadow: 10px 10px 49px 0px rgba(0,0,0,0.29);
+        -moz-box-shadow: 10px 10px 49px 0px rgba(0,0,0,0.29);
+        box-shadow: 10px 10px 49px 0px rgba(0,0,0,0.29);
+        border-radius: 2rem;
+        right: 0;
+        width: 18rem;
+        z-index: 999;
+        
+        & li {
+            list-style: none;
+            padding: .8rem;
+            text-align: center;
+            transition: .3s all;
+
+            &:hover {
+                background-color: #acacac;
+                border-radius: 1rem;
+            }
+
+            & a {
+                font-size: 1.7rem;
+                display: flex;
+                align-items: center;
+                
+                & svg {
+                    width: 20px;
+                    height: 20px;
+                    margin-right: .5rem;
+
+                }
+
+            }
+        }
+
+
+        &[show] {
+            opacity: 1;
+            pointer-events: all;
+            transform: translate(0);
+        }
+    }
+}

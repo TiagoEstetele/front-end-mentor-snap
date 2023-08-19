@@ -1,0 +1,50 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+body {
+    box-sizing: border-box;
+    position: relative;
+    font-family: 'Montserrat', sans-serif;
+}
+main {
+    position: relative;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+button {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    border-radius: 0;
+}
+input,
+textarea,
+select {
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 0;
+    outline: none;
+    border: none;
+    font-family: inherit;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+.wrapper {
+    margin: 0 auto;
+    width: 80%;
+    max-width: 1350px;
+}

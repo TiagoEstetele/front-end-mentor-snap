@@ -1,0 +1,15 @@
+{
+  "name": "project-title",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "sass assets/sass/:assets/css/ -w --style=compressed --source-map"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.55.0",
+    "w3c-html-validator": "^1.1.3"
+  },
+  "description": ""
+}
