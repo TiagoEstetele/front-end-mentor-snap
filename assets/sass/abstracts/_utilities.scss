@@ -11,13 +11,13 @@
 }
 
 .mobile-only {
-    @include min(801) {
+    @include min(900) {
         display: none !important;
     }
 }
 
 .desktop-only {
-    @include max(800) {
+    @include max(900) {
         display: none !important;
     }
 }

@@ -1,0 +1,35 @@
+@import '../abstracts/utilities';
+
+.h-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 7.7rem);
+
+    & h2 {
+        font-size: 5.5rem;
+        max-width: 40rem;
+        margin-bottom: 4rem;
+    }
+
+    & p {
+        font-size: 2.2rem;
+        max-width: 52rem;
+        margin-bottom: 4rem;
+    }
+
+    & a {
+        padding: 2rem;
+        font-size: 1.8rem;
+        background-color: #000;
+        color: #fff;
+        border-radius: 2rem;
+        border: .1rem solid #000;
+        transition: .2s ease-in-out;
+
+        &:hover {
+            background-color: #fff;
+            color: #000;
+        }
+    }
+}

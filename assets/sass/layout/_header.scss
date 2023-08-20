@@ -1,21 +1,92 @@
 @import '../abstracts/utilities';
 
 .h-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     padding: 2rem;
     z-index: 999;
+
+    &__nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include max(900) {
+            flex-direction: row-reverse;
+            justify-content: center;
+        }
+
+        & button {
+            border: none;
+            background: none;
+            border-top: .3rem solid #000;
+            cursor: pointer;
+            z-index: 1;
+            position: fixed;
+            top: 2.6rem;
+            right: 1.6rem;
+
+            &::before,
+            &::after {
+                content: "";
+                display: block;
+                width: 3rem;
+                height: .3rem;
+                background-color: #000;
+                margin-top: .5rem;
+                position: relative;
+                transition: 0.3s;
+            }
+
+            &[animate] {
+                position: fixed;
+                top: 2.6rem;
+                right: 1.6rem;
+                border-top-color: transparent;
+
+                &::before {
+                    transform: rotate(135deg);
+
+                }
+
+                &::after {
+                    transform: rotate(-135deg);
+                    top: -7px;
+                }
+            }
+        }
+    }
 
     &__links {
         display: flex;
         align-items: center;
         gap: 2rem;
 
+        @include max(900) {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: #d1cbcb;
+            flex-direction: column;
+            justify-content: center;
+            clip-path: circle(10rem at 90% -15%);
+            transition: 1s ease-out;
+            pointer-events: none;
+
+            &[active] {
+                clip-path: circle(150rem at 90% -15%);
+                pointer-events: all;
+            }
+        }
+
         & h1 {
             font-size: 3rem;
             font-weight: 700;
             margin-right: 5rem;
+
+            @include max(900) {
+                margin: 0;
+            }
         }
 
         & > ul {
@@ -59,6 +130,10 @@
         display: flex;
         gap: 2rem;
         margin-left: 5rem;
+        
+        @include max(900) {
+            margin: 0;
+        }
 
         & > a {
             font-size: 1.7rem;
@@ -131,5 +206,17 @@
             pointer-events: all;
             transform: translate(0);
         }
+    }
+
+    &__navlist {
+
+        @include max(900) {
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            width: 100vw;
+            height: 30vh;
+        }
+        
     }
 }
